@@ -1,0 +1,97 @@
+<html>
+
+<head>
+
+    <link href="css/bootstrap.min.css" rel='stylesheet' />
+
+    <style>
+        #signin {
+            display: none;
+        }
+
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+
+        function Show(divid) {
+            var div = document.getElementById(divid);
+            div.style.display = "block";
+
+            if (divid == 'signup') {
+                document.getElementById('signin').style.display = 'none';
+
+                document.getElementById('signintab').classList.remove('active');
+                document.getElementById('signintab').classList.remove('btn-info');
+
+                document.getElementById('signuptab').classList.add('active');
+                document.getElementById('signuptab').classList.add('btn-info');
+            }
+            else {
+                document.getElementById('signup').style.display = 'none';
+                document.getElementById('signuptab').classList.remove('active');
+                document.getElementById('signuptab').classList.remove('btn-info');
+
+                document.getElementById('signintab').classList.add('active');
+                document.getElementById('signintab').classList.add('btn-info');
+
+            }
+
+
+            var tab = document.getElementById(tabid);
+
+        }
+    </script>
+
+
+</head>
+
+<body class="container">
+
+    <nav class="nav nav-tabs nav-stacked">
+        <a class="nav-link btn-info active" id="signuptab" onclick="Show('signup')">Signup</a>
+        <a class="nav-link" id="signintab" onclick="Show('signin')">Sign in</a>
+    </nav>
+
+    <div id="signin">
+        <div class="form">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" value="" Id="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" value="" Id="password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="button" value="Sign in" class="btn btn-default btn-info btn-primary" />
+            </div>
+        </div>
+    </div>
+    <div id="signup">
+        <div class="form">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" value="" Id="name" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" value="" Id="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" value="" Id="password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" value="" Id="confirmpassword" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="button" value="Signup" class="btn btn-default btn-info btn-primary" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
